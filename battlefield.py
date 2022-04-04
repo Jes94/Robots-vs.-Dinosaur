@@ -3,16 +3,25 @@ from dinosaur import Dinosaur
 
 class Battlefield:
     def __init__(self):
+        self.game_name = "Robots versus Dinosaurs"
         pass
 
     def run_game(self):
-        pass
+        Battlefield.display_welcome(self)
+        self.dino = Dinosaur(input('Please enter the name for the dinosaur. '), int(input('How strong should the dinosaur be? Please enter 1-30: ')))
+        self.robot = Robot(input('Please enter the name for the robot fighter. '))
+        Battlefield.battle_phase(self)
+        Battlefield.display_winner(self)
 
     def display_welcome(self):
-        pass
+        print(f"Welcome to {self.game_name}")
 
     def battle_phase(self):
-        pass
-
+        while self.dino.health > 0 and self.robot.health > 0:
+            self.dino.take_damage(self.robot.attack(self.dino.name))
+            self.robot.take_damage(self.dino.attack(self.robot.name))
     def display_winner(self):
-        pass
+        if self.dino.health > 0:
+            print(f'{self.dino.name} has defeated the mighty {self.robot.name}!')
+        elif self.robot.health > 0:
+            print(f'{self.robot.name} has slain the mighty {self.dino.name}!')
