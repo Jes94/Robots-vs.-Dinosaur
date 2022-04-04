@@ -21,9 +21,9 @@ class Battlefield:
             self.dino.take_damage(self.robot.attack(self.dino.name))
             self.robot.take_damage(self.dino.attack(self.robot.name))
     def display_winner(self):
-        if self.dino.health > 0:
+        if self.dino.health > self.robot.health:
             print(f'{self.dino.name} has defeated the mighty {self.robot.name}!')
-        elif self.robot.health > 0:
+        elif self.robot.health > self.dino.health:
             print(f'{self.robot.name} has slain the mighty {self.dino.name}!')
         elif self.dino.health <= 0 and self.robot.health <= 0:
             print("It's a double knockout!")
