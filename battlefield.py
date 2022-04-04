@@ -25,3 +25,5 @@ class Battlefield:
             print(f'{self.dino.name} has defeated the mighty {self.robot.name}!')
         elif self.robot.health > 0:
             print(f'{self.robot.name} has slain the mighty {self.dino.name}!')
+        elif self.dino.health <= 0 and self.robot.health <= 0:
+            print("It's a double knockout!")
