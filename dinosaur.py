@@ -10,3 +10,4 @@ class Dinosaur:
     
     def take_damage(self, damage):
         self.health -= damage
+        print(f'{self.name} has {self.health} health remaining!')

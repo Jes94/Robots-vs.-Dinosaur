@@ -17,6 +17,7 @@ class Robot:
 
     def take_damage(self, damage):
         self.health -= damage
+        print(f'{self.name} has {self.health} health remaining!')
     
     def weapon_choice(self):
         choice = int(input('Choose your robots weapon:\n1 is the legendary Khopesh dagger(15 damage)\n2 is the mythical Excalibur(25 damage)\n3 is the great Leviathan axe(35 damage)\nEnter your choice of 1, 2, or 3. '))
