@@ -17,9 +17,16 @@ class Battlefield:
         print(f"Welcome to {self.game_name}")
 
     def battle_phase(self):
-        while self.dino.health > 0 and self.robot.health > 0:
-            self.dino.take_damage(self.robot.attack(self.dino.name))
-            self.robot.take_damage(self.dino.attack(self.robot.name))
+        counter = 0
+        while counter == 0:
+            if self.robot.health > 0:
+                self.dino.take_damage(self.robot.attack(self.dino.name))
+            else:
+                counter += 1
+            if self.dino.health > 0:
+                self.robot.take_damage(self.dino.attack(self.robot.name))
+            else:
+                counter += 1
     def display_winner(self):
         if self.dino.health > self.robot.health:
             print(f'{self.dino.name} has defeated the mighty {self.robot.name}!')
