@@ -1,6 +1,6 @@
 from robot import Robot
 from dinosaur import Dinosaur
-
+from random import randint
 class Battlefield:
     def __init__(self):
         self.game_name = "Robots versus Dinosaurs"
@@ -8,7 +8,7 @@ class Battlefield:
 
     def run_game(self):
         Battlefield.display_welcome(self)
-        self.dino = Dinosaur(input('Please enter the name for the dinosaur. '), int(input('How strong should the dinosaur be? Please enter 1-30: ')))
+        self.dino = Dinosaur(input('Please enter the name for the dinosaur. '), randint(15, 35))
         self.robot = Robot(input('Please enter the name for the robot fighter. '))
         Battlefield.battle_phase(self)
         Battlefield.display_winner(self)
