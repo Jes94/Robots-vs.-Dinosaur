@@ -6,14 +6,14 @@ class Robot:
         self.sword = Weapon('Excalibur', 25)
         self.dagger = Weapon('Khopesh', 15)
         self.axe = Weapon('Leviathan', 35)
-        self.weapon = Robot.weapon_choice(self)
+        self.active_weapon = Robot.weapon_choice(self)
 
 
 
 
     def attack(self, dinosaur):
-        print(f'{self.name} attacks {dinosaur} with {self.weapon.name} for {self.weapon.attack_power} damage!')
-        return self.weapon.attack_power
+        print(f'{self.name} attacks {dinosaur} with {self.active_weapon.name} for {self.active_weapon.attack_power} damage!')
+        return self.active_weapon.attack_power
 
     def take_damage(self, damage):
         self.health -= damage
