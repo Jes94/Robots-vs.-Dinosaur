@@ -7,7 +7,7 @@ class Battlefield:
 
     def run_game(self):
         self.display_welcome()
-        self.dino = Dinosaur(input('Please enter the name for the dinosaur. '), int(input('Enter how stron the dinosaur should be. Pick a number 15-35: ')))
+        self.dino = Dinosaur(input('Please enter the name for the dinosaur. '), int(input('Enter how strong the dinosaur should be. Pick a number 15-35: ')))
         self.robot = Robot(input('Please enter the name for the robot fighter. '))
         self.battle_phase()
         self.display_winner()
