@@ -6,11 +6,11 @@ class Battlefield:
         pass
 
     def run_game(self):
-        Battlefield.display_welcome(self)
+        self.display_welcome()
         self.dino = Dinosaur(input('Please enter the name for the dinosaur. '), int(input('Enter how stron the dinosaur should be. Pick a number 15-35: ')))
         self.robot = Robot(input('Please enter the name for the robot fighter. '))
-        Battlefield.battle_phase(self)
-        Battlefield.display_winner(self)
+        self.battle_phase()
+        self.display_winner()
 
     def display_welcome(self):
         print(f"Welcome to {self.game_name}")
